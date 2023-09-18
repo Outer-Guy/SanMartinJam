@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Buttons/(3).png" type="Texture" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 41
+size = 51
 outline_size = 2
 font_data = ExtResource( 1 )
 
