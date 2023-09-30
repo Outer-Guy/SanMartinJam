@@ -9,9 +9,6 @@ func enter():
 
 func update(delta):
 	if owner.is_on_floor():
-		if Input.is_action_pressed("ui_down"):
-			emit_signal("finished", "sliding")
-			return
 		emit_signal("finished", "running")
 		return
 	if Input.is_action_pressed("ui_down"):
