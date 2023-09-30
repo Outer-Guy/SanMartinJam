@@ -1,4 +1,5 @@
 extends "on_ground.gd" 
+export var Running : int = 50
 
 func initialize():
 	pass
