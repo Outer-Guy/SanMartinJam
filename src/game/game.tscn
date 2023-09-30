@@ -33,7 +33,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-platform = ExtResource( 4 )
+Rock = ExtResource( 4 )
 
 [node name="ground" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -44,7 +44,7 @@ tile_data = PoolIntArray( 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0
 position = Vector2( 128, 504 )
 
 [node name="platform_timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )

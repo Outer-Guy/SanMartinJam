@@ -1,6 +1,6 @@
 extends Node
 
-export (PackedScene) var platform
+export (PackedScene) var Rock
 
 var rng = RandomNumberGenerator.new()
 
@@ -12,11 +12,11 @@ func _ready():
 #	$MobTimer.stop()
 
 func _on_platform_timer_timeout():
-	var p = platform.instance()
+	var p = Rock.instance()
 	add_child(p)
 	for child in $player/states.get_children():
 		p.connect("platform_hit", child, "_on_platform_hit")
-	var x_pos = 1200
-	var y_pos = 300
-#	var y_pos = rng.randf_range(100, 500)
+#	var x_pos = 1200
+	var y_pos = 540
+	var x_pos = rng.randf_range(1200, 2400)
 	p.set_position(Vector2(x_pos, y_pos))
