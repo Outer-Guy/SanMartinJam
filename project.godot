@@ -10,17 +10,14 @@ config_version=4
 
 [application]
 
-config/name="SanMartin Jam"
+config/name="The Runner"
+run/main_scene="res://src/game/game.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
-
-[gui]
-
-common/drop_mouse_on_gui_input_disabled=true
+window/size/width=1280
+window/size/height=720
 
 [physics]
 
