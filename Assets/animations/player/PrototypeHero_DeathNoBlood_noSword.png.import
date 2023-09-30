@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PrototypeHero_DeathNoBlood_noSword.png-81bd103a01fe07fd056ab76ca585b676.stex"
+path="res://.import/PrototypeHero_DeathNoBlood_noSword.png-1ace0d1cdf968154d12acb57c42650e2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/player/PrototypeHero_DeathNoBlood_noSword.png"
-dest_files=[ "res://.import/PrototypeHero_DeathNoBlood_noSword.png-81bd103a01fe07fd056ab76ca585b676.stex" ]
+source_file="res://Assets/animations/player/PrototypeHero_DeathNoBlood_noSword.png"
+dest_files=[ "res://.import/PrototypeHero_DeathNoBlood_noSword.png-1ace0d1cdf968154d12acb57c42650e2.stex" ]
 
 [params]
 

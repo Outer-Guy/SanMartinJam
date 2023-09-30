@@ -2,14 +2,10 @@ extends "../state_machine.gd"
 
 func _ready():
 	states_map = {
-		"idle": owner.get_node("states/idle"),
 		"staggering": owner.get_node("states/staggering"),
 		"running": owner.get_node("states/running"),
 		"jumping": owner.get_node("states/jumping"),
 		"falling": owner.get_node("states/falling"),
-		"sliding": owner.get_node("states/sliding"),
-		"juking": owner.get_node("states/juking"),
-		"bashing": owner.get_node("states/bashing")
 	}
 
 func _change_state(state_name):
