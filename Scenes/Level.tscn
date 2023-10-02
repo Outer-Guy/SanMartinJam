@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/game/game.gd" type="Script" id=1]
 [ext_resource path="res://src/game/objects/platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Backgrounds/(4).png" type="Texture" id=3]
 [ext_resource path="res://Assets/suelo.png" type="Texture" id=4]
-[ext_resource path="res://Assets/fondo.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UNISPACE BD.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://Scenes/Background.gd" type="Script" id=6]
 [ext_resource path="res://src/game/actors/player/player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=4]
 resource_name = "Suelo"
@@ -31,6 +33,38 @@ func _attempt_reposition() -> void:
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 649.607, 56.6128 )
 
+[sub_resource type="GDScript" id=5]
+resource_name = "Stop"
+script/source = "extends Node
+export (PackedScene) var Pause
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Button_pressed():
+	var p = Pause.instance()
+	get_parent().add_child(p)
+	
+	pass # Replace with function body.
+"
+
+[sub_resource type="DynamicFont" id=6]
+size = 123
+outline_size = 2
+font_data = ExtResource( 5 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 Rock = ExtResource( 2 )
@@ -54,7 +88,7 @@ position = Vector2( 968, 646 )
 scale = Vector2( 1.5125, 1.34211 )
 texture = ExtResource( 4 )
 script = SubResource( 4 )
-VELOCITY = -6.6
+VELOCITY = -4.0
 
 [node name="Suelo2" type="Sprite" parent="Suelo"]
 position = Vector2( 1280, 0 )
@@ -77,16 +111,31 @@ visible = false
 position = Vector2( 1.63232, -0.357758 )
 shape = SubResource( 3 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Button" parent="." instance=ExtResource( 8 )]
+margin_left = 92.0
+margin_top = 120.0
+margin_right = 92.0
+margin_bottom = 120.0
+rect_scale = Vector2( 0.452299, 0.452299 )
+script = SubResource( 5 )
+Pause = ExtResource( 9 )
 
-[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="RichTextLabel" parent="Button" index="1"]
+margin_left = -201.194
+margin_top = -66.3278
+margin_right = 199.806
+margin_bottom = 248.672
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_text = "[center]II"
+text = "II"
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Ground"]
-texture = ExtResource( 4 )
-
-[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
-texture = ExtResource( 5 )
+[node name="Button" parent="Button" index="2"]
+margin_left = -192.351
+margin_top = -227.725
+margin_right = 199.649
+margin_bottom = 216.275
 
 [connection signal="timeout" from="platform_timer" to="." method="_on_platform_timer_timeout"]
+[connection signal="pressed" from="Button/Button" to="Button" method="_on_Button_pressed"]
+
+[editable path="Button"]

@@ -13,7 +13,7 @@ func _ready():
 
 func _on_platform_timer_timeout():
 	var p = Rock.instance()
-	add_child(p)
+	get_parent().add_child(p)
 	for child in $player/states.get_children():
 		p.connect("platform_hit", child, "_on_platform_hit")
 #	var x_pos = 1200

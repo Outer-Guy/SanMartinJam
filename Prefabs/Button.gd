@@ -1,6 +1,6 @@
 extends Control
 
-export var ChangeSceneTo : String
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,14 +17,5 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene(ChangeSceneTo)
+	get_parent().queue_free()
 	pass # Replace with function body.
-
-
-func _on_Button2_pressed():
-	get_tree().change_scene(ChangeSceneTo)
-	pass # Replace with function body.
-
-
-func _on_Button3_pressed():
-	get_tree().quit()
