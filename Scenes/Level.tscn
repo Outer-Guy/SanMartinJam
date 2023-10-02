@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/game/game.gd" type="Script" id=1]
 [ext_resource path="res://src/game/objects/platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Backgrounds/(4).png" type="Texture" id=3]
 [ext_resource path="res://Assets/suelo.png" type="Texture" id=4]
+[ext_resource path="res://Assets/fondo.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Background.gd" type="Script" id=6]
 [ext_resource path="res://src/game/actors/player/player.tscn" type="PackedScene" id=7]
 
@@ -53,7 +54,7 @@ position = Vector2( 968, 646 )
 scale = Vector2( 1.5125, 1.34211 )
 texture = ExtResource( 4 )
 script = SubResource( 4 )
-VELOCITY = -4.0
+VELOCITY = -6.6
 
 [node name="Suelo2" type="Sprite" parent="Suelo"]
 position = Vector2( 1280, 0 )
@@ -75,5 +76,17 @@ scale = Vector2( 1.5125, 1.34211 )
 visible = false
 position = Vector2( 1.63232, -0.357758 )
 shape = SubResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Ground"]
+texture = ExtResource( 4 )
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
+texture = ExtResource( 5 )
 
 [connection signal="timeout" from="platform_timer" to="." method="_on_platform_timer_timeout"]

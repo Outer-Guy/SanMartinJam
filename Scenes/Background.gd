@@ -11,6 +11,6 @@ func _process(delta: float) -> void:
 	_attempt_reposition()
 	
 func _attempt_reposition() -> void:
-	if position.x < -600:
+	if position.x < 0:
 		# Don't just reset position to texture width, otherwise there will be a gap
-		position.x += 1200
+		position.x += 920
