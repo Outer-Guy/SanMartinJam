@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Prefabs/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Backgrounds/(4).png" type="Texture" id=2]
 [ext_resource path="res://Prefabs/Title.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/ChangeScene.gd" type="Script" id=4]
 
 [sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 0, 0, 0, 0.443137, 0, 0, 0, 0.572549 )
@@ -42,57 +41,16 @@ bbcode_text = "[center]Los andes Crossing"
 text = "Los andes Crossing"
 
 [node name="Button" parent="." instance=ExtResource( 1 )]
-margin_left = 752.0
-margin_top = 328.0
-margin_right = 1144.0
-margin_bottom = 772.0
-rect_pivot_offset = Vector2( 196, 222 )
-script = ExtResource( 4 )
-ChangeSceneTo = "res://Scenes/Level.tscn"
+margin_left = 936.0
+margin_top = 592.0
+margin_right = 936.0
+margin_bottom = 592.0
 
-[node name="RichTextLabel" parent="Button" index="0"]
-margin_left = 0.296001
-margin_top = 45.48
-margin_right = 0.623993
-margin_bottom = -0.472015
-bbcode_text = "[center]Iniciar"
-text = "Iniciar"
-
-[node name="Button2" parent="." instance=ExtResource( 1 )]
-margin_left = 240.0
-margin_top = 536.0
-margin_right = 632.0
-margin_bottom = 980.0
-rect_pivot_offset = Vector2( 196, 222 )
-
-[node name="RichTextLabel" parent="Button2" index="0"]
-margin_left = 0.296001
-margin_top = 53.48
-margin_right = 0.623993
-margin_bottom = -0.472015
-bbcode_text = "[center]Exit"
-text = "Exit"
-
-[node name="Button3" parent="." instance=ExtResource( 1 )]
-margin_left = 1336.0
-margin_top = 552.0
-margin_right = 1728.0
-margin_bottom = 996.0
-rect_pivot_offset = Vector2( 196, 222 )
-script = ExtResource( 4 )
-ChangeSceneTo = "res://Scenes/Credits.tscn"
-
-[node name="RichTextLabel" parent="Button3" index="0"]
-margin_left = 0.296001
-margin_top = 53.48
-margin_right = 0.623993
-margin_bottom = -0.472015
-bbcode_text = "[center]Credits"
-text = "Credits"
-
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[node name="RichTextLabel" parent="Button" index="1"]
+bbcode_text = "[center]Y es todo un tema
+vistes"
+text = "Y es todo un tema
+vistes"
 
 [editable path="Title"]
 [editable path="Button"]
-[editable path="Button2"]
-[editable path="Button3"]

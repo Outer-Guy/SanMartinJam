@@ -44,7 +44,7 @@ tile_data = PoolIntArray( 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0
 position = Vector2( 128, 504 )
 
 [node name="platform_timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 3.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )

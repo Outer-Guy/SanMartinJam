@@ -4,6 +4,8 @@ signal direction_changed(new_direction)
 
 #var look_direction = Vector2(1, 0) setget set_look_direction
 
+
+
 #func take_damage(attacker, amount, effect=null):
 #	if self.is_a_parent_of(attacker):
 #		return
@@ -18,3 +20,7 @@ signal direction_changed(new_direction)
 #func set_look_direction(value):
 #	look_direction = value
 #	emit_signal("direction_changed", value)
+
+
+func _on_Area2D_body_entered(body):
+	pass # Replace with function body.
