@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="The Runner"
-run/main_scene="res://src/game/game.tscn"
+config/name="San Martin"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]

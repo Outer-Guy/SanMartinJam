@@ -19,21 +19,22 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_right = 1273.0
+margin_bottom = 716.0
 
 [node name="(4)" type="Sprite" parent="UI"]
-position = Vector2( 960, 540 )
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( 640.889, 360.5 )
+scale = Vector2( 0.500695, 0.500695 )
 texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="UI"]
-position = Vector2( 960, 540 )
-scale = Vector2( 30, 16.875 )
+position = Vector2( 640, 360 )
+scale = Vector2( 20, 11.25 )
 texture = SubResource( 3 )
 
 [node name="Title" parent="." instance=ExtResource( 3 )]
-position = Vector2( 960, 160 )
+position = Vector2( 655, 88 )
+scale = Vector2( 0.38, 0.38 )
 
 [node name="RichTextLabel" parent="Title" index="0"]
 margin_top = -65.0
@@ -41,6 +42,7 @@ bbcode_text = "[center]Los andes Crossing"
 text = "Los andes Crossing"
 
 [node name="Button" parent="." instance=ExtResource( 1 )]
+<<<<<<< Updated upstream
 margin_left = 936.0
 margin_top = 592.0
 margin_right = 936.0
@@ -51,6 +53,60 @@ bbcode_text = "[center]Y es todo un tema
 vistes"
 text = "Y es todo un tema
 vistes"
+=======
+margin_left = 476.0
+margin_top = 171.0
+margin_right = 868.0
+margin_bottom = 615.0
+rect_pivot_offset = Vector2( 196, 222 )
+script = ExtResource( 4 )
+ChangeSceneTo = "res://Scenes/Level.tscn"
+
+[node name="RichTextLabel" parent="Button" index="0"]
+margin_left = 0.296001
+margin_top = 45.48
+margin_right = 0.623993
+margin_bottom = -0.472015
+bbcode_text = "[center]Iniciar"
+text = "Iniciar"
+
+[node name="Button2" parent="." instance=ExtResource( 1 )]
+margin_left = 67.0
+margin_top = 273.0
+margin_right = 459.0
+margin_bottom = 717.0
+rect_pivot_offset = Vector2( 196, 222 )
+script = ExtResource( 4 )
+
+[node name="RichTextLabel" parent="Button2" index="0"]
+margin_left = 56.296
+margin_top = 44.48
+margin_right = -58.376
+margin_bottom = -52.472
+bbcode_text = "[center]Exit"
+text = "Exit"
+
+[node name="Button3" parent="." instance=ExtResource( 1 )]
+margin_left = 903.0
+margin_top = 267.0
+margin_right = 1295.0
+margin_bottom = 711.0
+rect_pivot_offset = Vector2( 196, 222 )
+script = ExtResource( 4 )
+ChangeSceneTo = "res://Scenes/Credits.tscn"
+
+[node name="RichTextLabel" parent="Button3" index="0"]
+margin_left = 0.296001
+margin_top = 53.48
+margin_right = 0.623993
+margin_bottom = -0.472015
+bbcode_text = "[center]Credits"
+text = "Credits"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_Button3_pressed"]
+>>>>>>> Stashed changes
 
 [editable path="Title"]
 [editable path="Button"]
