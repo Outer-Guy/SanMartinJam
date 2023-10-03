@@ -20,3 +20,7 @@ func _on_platform_timer_timeout():
 	var y_pos = 540
 	var x_pos = rng.randf_range(1200, 2400)
 	p.set_position(Vector2(x_pos, y_pos))
+	
+func _onPause(var state : bool):
+	get_tree().paused = state
+	pass

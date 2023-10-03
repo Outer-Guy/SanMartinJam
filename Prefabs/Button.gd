@@ -17,5 +17,6 @@ func _ready():
 
 
 func _on_Button_pressed():
+	get_parent().get_parent()._onPause(false)
 	get_parent().queue_free()
 	pass # Replace with function body.

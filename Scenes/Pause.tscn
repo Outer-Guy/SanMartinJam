@@ -12,6 +12,8 @@ outline_size = 2
 font_data = ExtResource( 1 )
 
 [node name="Control2" type="CanvasLayer"]
+pause_mode = 2
+physics_interpolation_mode = 2
 layer = 10
 
 [node name="ColorRect" type="ColorRect" parent="."]
