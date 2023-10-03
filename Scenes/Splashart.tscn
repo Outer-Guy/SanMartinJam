@@ -60,7 +60,6 @@ script = SubResource( 1 )
 
 [node name="Title" parent="." instance=ExtResource( 2 )]
 position = Vector2( 627, 191 )
-scale = Vector2( 0.74, 0.74 )
 
 [node name="RichTextLabel" parent="Title" index="0"]
 margin_left = -466.216

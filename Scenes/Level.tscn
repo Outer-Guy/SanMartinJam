@@ -55,6 +55,8 @@ func _ready():
 
 
 func _on_Button_pressed():
+	var parent = get_parent()
+	parent._onPause(true)
 	var p = Pause.instance()
 	get_parent().add_child(p)
 	
