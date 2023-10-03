@@ -1,5 +1,111 @@
-[gd_scene format=2]
+[gd_scene load_steps=9 format=2]
 
-[node name="Control2" type="Control"]
+[ext_resource path="res://Prefabs/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Prefabs/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/ChangeScene.gd" type="Script" id=4]
+[ext_resource path="res://Assets/UNISPACE BD.TTF" type="DynamicFontData" id=5]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0, 0, 0, 0.443137, 0, 0, 0, 0.572549 )
+
+[sub_resource type="GradientTexture2D" id=3]
+gradient = SubResource( 2 )
+fill_from = Vector2( 1, 0 )
+fill_to = Vector2( 1, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 51
+outline_size = 2
+font_data = ExtResource( 5 )
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="ParallaxBackground" parent="UI" instance=ExtResource( 2 )]
+
+[node name="Sprite" type="Sprite" parent="UI"]
+position = Vector2( 640, 360 )
+scale = Vector2( 20, 11.25 )
+texture = SubResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+anchor_left = 0.137
+anchor_top = 0.33
+anchor_right = 0.853
+anchor_bottom = 0.688
+margin_left = -229.36
+margin_top = -22.6
+margin_right = 34.64
+margin_bottom = 223.64
+grow_horizontal = 0
+rect_pivot_offset = Vector2( -1479, -166 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Sebastián Filloy Miguez
+&
+Juan Rodrigo Montenegro Del Olio
+
+Técnicas y Herramientas para Desarrollo de Videojuegos
+
+Image Campus 2023"
+tab_size = 0
+text = "Sebastián Filloy Miguez
+&
+Juan Rodrigo Montenegro Del Olio
+
+Técnicas y Herramientas para Desarrollo de Videojuegos
+
+Image Campus 2023"
+fit_content_height = true
+
+[node name="Title" parent="." instance=ExtResource( 3 )]
+position = Vector2( 677, 119 )
+scale = Vector2( 0.4375, 0.4375 )
+
+[node name="RichTextLabel" parent="Title" index="0"]
+margin_top = -65.0
+bbcode_text = "[center]Los andes Crossing"
+text = "Los andes Crossing"
+
+[node name="Button" parent="." instance=ExtResource( 1 )]
+margin_left = 1896.0
+margin_top = 816.0
+margin_right = 1896.0
+margin_bottom = 816.0
+
+[node name="Sprite" parent="Button" index="0"]
+position = Vector2( -750, -296.505 )
+scale = Vector2( 0.621053, 0.621053 )
+offset = Vector2( 0, 91 )
+
+[node name="RichTextLabel" parent="Button" index="1"]
+margin_left = -881.0
+margin_top = -268.0
+margin_right = -617.0
+margin_bottom = -61.0
+rect_pivot_offset = Vector2( -1479, -166 )
+bbcode_text = "[center]Back"
+text = "Back"
+fit_content_height = true
+
+[node name="Button" parent="Button" index="2"]
+margin_left = -866.0
+margin_top = -380.0
+margin_right = -639.0
+margin_bottom = -104.0
+script = ExtResource( 4 )
+ChangeSceneTo = "res://Scenes/MainMenu.tscn"
+
+[connection signal="pressed" from="Button/Button" to="Button/Button" method="_on_Button_pressed"]
+
+[editable path="Title"]
+[editable path="Button"]
