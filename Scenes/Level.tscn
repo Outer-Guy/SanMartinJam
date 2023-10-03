@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/game/game.gd" type="Script" id=1]
 [ext_resource path="res://src/game/objects/platform.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/game/actors/player/player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Prefabs/Button.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/ParallaxBackground.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GDScript" id=4]
 resource_name = "Suelo"
@@ -70,6 +71,7 @@ script = ExtResource( 1 )
 Rock = ExtResource( 2 )
 
 [node name="Background" type="Sprite" parent="."]
+visible = false
 position = Vector2( 625, 271 )
 scale = Vector2( 0.49375, 0.49375 )
 z_index = -10
@@ -84,6 +86,7 @@ z_index = -10
 texture = ExtResource( 3 )
 
 [node name="Suelo" type="Sprite" parent="."]
+visible = false
 position = Vector2( 968, 646 )
 scale = Vector2( 1.5125, 1.34211 )
 texture = ExtResource( 4 )
@@ -134,6 +137,8 @@ margin_left = -192.351
 margin_top = -227.725
 margin_right = 199.649
 margin_bottom = 216.275
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 10 )]
 
 [connection signal="timeout" from="platform_timer" to="." method="_on_platform_timer_timeout"]
 [connection signal="pressed" from="Button/Button" to="Button" method="_on_Button_pressed"]
